@@ -10,7 +10,7 @@ OKIC staging and production environments are separate.
 Merchants need an active and verified OKIC account to use both environments.
 
 - [OKIC Staging Wallet](https://okiwallet.xyz)
-- OKIC Production Wallet is not available yet
+- _OKIC Production Wallet is not available yet_
 
 All transactions initiated by merchant on our staging environment are not real and there are strictly for testing.
 All functionality on both environments are the same and it will be easy to switch on production environment after functionality 
@@ -22,7 +22,7 @@ testing by changing the URL.
 All transactions on both environments are available in OKIC explorer.
 
 - [OKIC Staging Explorer](https://explorer.okiwallet.xyz)
-- OKIC Production Explorer is not available yet
+- _OKIC Production Explorer is not available yet_
 
 ### Requirements for OKIC integration
 
@@ -30,3 +30,6 @@ Following credentials are required for merchant OKIC integration:
 
 - [x] **merchant public key**
 - [x] **merchant private key**
+
+Copy your credentials from OKIC wallet and place it on secure place on your server.
+You can see the video bellow how to get your public and private key.
