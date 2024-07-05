@@ -231,5 +231,7 @@ Payload from the channel **external_app_validated_tx**:
   recipient: 'okicxbbe3e224a6e018c93202c79f77af69384aada5981ba3e244d78e4b1641ca7ff0'
 }
 ```
+### Generate Secure Token Example
+
 [generateSecureToken.webm](https://github.com/okisoftware/okic-payment-gateway/assets/63173020/8d62ba8b-11fa-45d9-aa65-52a5b7484b2d)
 
