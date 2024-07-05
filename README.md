@@ -2,7 +2,7 @@
 
 ### Introduction
 OKIC payment integration allows merchants to use OKIC as a payment currency. It supports a seamless payment experience on your platform
-while protecting your application from payment frauds and complexity related to various regulations.
+while protecting your application from payment fraud and complexity related to various regulations.
 
 ### Staging and Production Environment
 OKIC staging and production environments are separate.
@@ -12,40 +12,40 @@ Merchants need an active and verified OKIC account to use both environments.
 - [OKIC Staging Wallet](https://okiwallet.xyz)
 - _OKIC Production Wallet is not available yet_
 
-All transactions initiated by merchant on our staging environment are not real and there are strictly for testing.
-All functionality on both environments are the same and it will be easy to switch on production environment after functionality 
+All transactions initiated by merchants on our staging environment are not real and are strictly for testing.
+All functionality on both environments is the same and it will be easy to switch on the production environment after functionality 
 testing by changing the URL.
 
 - OKIC staging URL: https://backend.okiwallet.xyz
 - OKIC production URL: **not available - coming soon**
 
-All transactions on both environments are available in OKIC explorer.
+All transactions on both environments are available in OKIC Explorer.
 
 - [OKIC Staging Explorer](https://explorer.okiwallet.xyz)
 - _OKIC Production Explorer is not available yet_
 
 ### Requirements for OKIC integration
 
-Following credentials are required for merchant OKIC integration:
+The following credentials are required for merchant OKIC integration:
 
 - [x] **merchant public key**
 - [x] **merchant private key**
 
-Copy your credentials from OKIC wallet and place it on secure place on your server.
-You can see the video bellow how to get your public and private key.
+Copy your credentials from the OKIC wallet and place them in a secure place on your server.
+You can see the video below on how to get your public and private key.
 
 [getKeys.webm](https://github.com/okisoftware/okic-payment-gateway/assets/63173020/7bdf4a76-a8dd-4657-b86b-983a70e53066)
 
-For security reasons you can roll back your keys and replace old keys with new ones.
+For security reasons, you can roll back your keys and replace old keys with new ones.
 
 ### OKIC Integration Methods
 
-OKIC supports two different methods for merchants integration:
+OKIC supports two different methods for merchant integration:
 
 - [x] Payment Gateway integration
 - [x] Payment Processing integration
 
-For the understanding of the integration methods we have to introduce the OKIC transaction structure, or the most important parts:
+To understand the integration methods we have to introduce the OKIC transaction structure or the most important parts:
 
 - **txid**: a unique transaction identifier, created by hashing transaction details
 - **status**: transaction status after transaction validation
@@ -56,24 +56,24 @@ For the understanding of the integration methods we have to introduce the OKIC t
 - **txFee**: The fee charged to process the transaction
 - **additionalFee**: Additional fee charged to process the transaction
 
-Merchant has to be verified as a OKIC business account. After successful verification Merchant will have one of the following payment types:
+The merchant has to be verified as an OKIC business account. After successful verification, Merchant will have one of the following payment types:
 
 - Regular (fixed transaction fee)
-- Pre-Payment (one part of the transaction fee is fixed, and other is variable depending of the number of transactions)
+- Pre-Payment (one part of the transaction fee is fixed, and the other is variable depending on the number of transactions)
 
 #### Payment Gateway integration
 
-Payment Gateway integration method is intended to the merchants that wants to use OKIC token as means of payment.
-This method is commonly used on e-commerce web services. In this case merchant is the recipient and issuer, and sender is merchant
-user that pays merchant services. Transaction fee is charged to the merchant. 
-Sender will pays only the merchant service price.
+The payment Gateway integration method is intended for merchants that want to use OKIC tokens as a means of payment.
+This method is commonly used on e-commerce web services. In this case, the merchant is the recipient and issuer, and the sender is the merchant
+user who pays for merchant services. The transaction fee is charged to the merchant. 
+The sender will pay only the merchant service price.
 
 #### Payment Processing integration
 
-Payment Processing integration method is intended to the merchants that wants to transfer payment transaction from sender to the recipient.
-Merchant is issuer and can charged additional transaction fee for merchant services. Transaction fee and additional transaction fee are charged to the sender.
+The payment processing integration method is intended for merchants who want to transfer payment transactions from sender to recipient.
+The merchant is an issuer and can charge an additional transaction fee for merchant services. Transaction fees and additional transaction fees are charged to the sender.
 
-## Payment Gateway integration Example
+## Payment Gateway Integration Example
 
 ```typescript
 
@@ -170,7 +170,7 @@ For both examples, if the API request is successful you should get the response 
 
 ```
 
-For both examples, if the API request is unsuccessful the response returns JSON payload in format:
+For both examples, if the API request is unsuccessful the response returns JSON payload in the format:
 
 ```json
 {
@@ -182,10 +182,10 @@ For both examples, if the API request is unsuccessful the response returns JSON 
 }
 ```
 
-## Listen transactions status from OKIC Blockchain Socket Server
+## Listen to transactions status from OKIC Blockchain Socket Server
 
-The previous examples are only first step to complete payment with OKIC.
-You have to listen OKIC Blockchain Socket Server for transaction validation status.
+The previous examples are only the first step to completing payment with OKIC.
+You have to listen to the OKIC Blockchain Socket Server for transaction validation status.
 To achieve that you can use _socket.io-client_ on your server.
 
 **You can use only one Business and verified OKIC account for the merchant services.**
@@ -231,3 +231,5 @@ Payload from the channel **external_app_validated_tx**:
   recipient: 'okicxbbe3e224a6e018c93202c79f77af69384aada5981ba3e244d78e4b1641ca7ff0'
 }
 ```
+[generateSecureToken.webm](https://github.com/okisoftware/okic-payment-gateway/assets/63173020/8d62ba8b-11fa-45d9-aa65-52a5b7484b2d)
+
