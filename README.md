@@ -73,7 +73,7 @@ Sender will pays only the merchant service price.
 Payment Processing integration method is intended to the merchants that wants to transfer payment transaction from sender to the recipient.
 Merchant is issuer and can charged additional transaction fee for merchant services. Transaction fee and additional transaction fee are charged to the sender.
 
-### Payment Gateway integration Example
+## Payment Gateway integration Example
 
 ```typescript
 
@@ -114,7 +114,7 @@ generatePaymentGateway();
 
 ```
 
-### Payment Processing integration Example
+## Payment Processing integration Example
 
 ```typescript
 
@@ -124,7 +124,7 @@ const generatePaymentProcessing = async () => {
   const senderWalletAddress = "okicx5222..." // Sender OKIC Wallet Address
   const receiverWalletAddress = "okicx6333..." // Recipient OKIC Wallet Address
   const amount = 100; // Transaction value for processing
-  const additionalFee = 0.5; // Additional transaction fee charged by merchant for the services, it can be 0 
+  const additionalFee = 0.5; // Fee charged by merchant for the services, it can be 0 
   const token = "VKX9LD"; // Secure token generated in sender OKIC wallet account
   const senderPublicKey = "6087eddca5e18eb51730ae1992de5777" // Sender OKIC Public Key
   const publicKey = process.env.PUBLIC_KEY // merchant public key;
