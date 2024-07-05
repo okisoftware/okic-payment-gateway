@@ -63,7 +63,7 @@ Merchant has to be verified as a OKIC business account. After successful verific
 
 #### Payment Gateway integration
 
-Payment Gateway integration method is intended to the merchant that want to use OKIC token as means of payment.
+Payment Gateway integration method is intended to the merchants that wants to use OKIC token as means of payment.
 This method is commonly used on e-commerce web services. In this case merchant is the recipient and issuer, and sender is merchant
 user that pays merchant services. Transaction fee is charged to the merchant. 
 Sender will pays only the merchant service price.
