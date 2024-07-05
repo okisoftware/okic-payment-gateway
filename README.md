@@ -181,3 +181,49 @@ For both examples, if the API request is unsuccessful the response returns JSON 
     }
 }
 ```
+
+## Listen transactions status from OKIC Blockchain Socket Server
+
+The previous examples are only first step to complete payment with OKIC.
+You have to listen OKIC Blockchain Socket Server for transaction validation status.
+To achieve that you can use _socket.io-client_ on your server.
+
+```typescript
+import { io } from 'socket.io-client';
+
+const OKIC_URL = 'https://backend.okiwallet.xyz';
+
+const ioClient = io(OKIC_URL, {
+  transports: ["websocket"],
+});
+
+const publicKey = process.env.PUBLIC_KEY; // merchant public key
+const CONNECT_OKIC_CHANNEL = 'connect_external_app';
+const LISTEN_TX_CHANGES = 'external_app_validated_tx';
+
+ioClient.on('connect', () => {
+  logger.debug('Successful connected on OKIC Blockchain');
+
+  ioClient.emit(CONNECT_OKIC_CHANNEL, ({ publicKey }));
+
+  ioClient.on(LISTEN_TX_CHANGES, (data) => {
+    const { txid, status, sender, recipient } = data;
+
+    if (status === "Success") {
+      /** do something with txid */
+
+    }
+  })
+});
+
+```
+
+Payload from the channel **external_app_validated_tx**:
+```typescript
+{
+  txid: '0e10ca33a08fe596bc618887e0826c566aa926f9c33c7c31f7d0ffca2719f260',
+  status: 'Success',
+  sender: 'okicx522e2ab639cd8eaf4fb95ed268e30c7a104350b9fbc8c560887cb3d3b4295907',
+  recipient: 'okicxbbe3e224a6e018c93202c79f77af69384aada5981ba3e244d78e4b1641ca7ff0'
+}
+```
