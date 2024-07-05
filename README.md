@@ -106,3 +106,26 @@ const generatePaymentGateway = async () => {
 generatePaymentGateway();
 
 ```
+
+If the API request is successful you should get the response JSON payload:
+
+```json
+{
+  "success": true,
+  "message": "Transaction sent to the Blockchain network.",
+  "txid": "3fc590b38bd2a6e6b59ccc538ae91de4d5c03b4e0e7f421bedfaa867e850a097"
+}
+
+```
+
+If the API request is unsuccessful the response returns JSON payload in format:
+
+```json
+{
+    "success": false,
+    "error": {
+        "code": 400,
+        "message": "Invalid Confirmation Token"
+    }
+}
+```
