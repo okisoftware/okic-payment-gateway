@@ -72,3 +72,37 @@ Sender will pays only the merchant service price.
 
 Payment Processing integration method is intended to the merchants that wants to transfer payment transaction from sender to the recipient.
 Merchant is issuer and can charged additional transaction fee for merchant services. Transaction fee and additional transaction fee are charged to the sender.
+
+### Payment Gateway integration Example
+
+```typescript
+
+import axios from "axios";
+
+const generatePaymentGateway = async () => {
+  const walletAddress = "okicx5222..." // Sender OKIC Wallet Address
+  const amount = 100; // Transaction value for processing
+  const token = "VKX9LD"; // Secure token generated in sender OKIC wallet account
+  const senderPublicKey = "6087eddca5e18eb51730ae1992de5777" // Sender OKIC Public Key
+  const publicKey = process.env.PUBLIC_KEY // merchant public key;
+  const privateKey = process.env.PRIVATE_KEY // merchant private key;
+
+  const OKIC_URL = "https://backend.okiwallet.xyz/api"
+
+  try {
+    const { data } = await axios.post(`${OKIC_URL}/transaction/external/payment/client`, {
+      walletAddress,
+      amount,
+      token,
+      senderPublicKey,
+      publicKey,
+      privateKey
+    });
+  } catch (err) {
+    // catch exception from the OKIC server
+  }
+};
+
+generatePaymentGateway();
+
+```
