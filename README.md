@@ -34,4 +34,6 @@ Following credentials are required for merchant OKIC integration:
 Copy your credentials from OKIC wallet and place it on secure place on your server.
 You can see the video bellow how to get your public and private key.
 
+[getKeys.webm](https://github.com/okisoftware/okic-payment-gateway/assets/63173020/7bdf4a76-a8dd-4657-b86b-983a70e53066)
+
 For security reasons you can roll back your keys and replace old keys with new ones.
