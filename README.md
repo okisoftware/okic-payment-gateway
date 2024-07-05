@@ -133,7 +133,7 @@ const generatePaymentProcessing = async () => {
   const OKIC_URL = "https://backend.okiwallet.xyz/api"
 
   try {
-    const { data } = await axios.post(`${OKIC_URL}/transaction/external/payment/client`, {
+    const { data } = await axios.post(`${OKIC_URL}/transaction/external/payment/business`, {
       senderWalletAddress,
       receiverWalletAddress,
       amount,
