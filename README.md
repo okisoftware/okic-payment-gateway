@@ -103,7 +103,8 @@ const generatePaymentGateway = async () => {
 
     /** save txid from the response in your storage with your order details */
     /** in this moment transaction has PreAuthorized status and it's not validated yet */
-    /** txid is unique and you can query your storage later by txid to find and update your order if the transaction status is Success */
+    /** txid is unique and you can query your storage later by txid to find and 
+     * update your order if the transaction status is Success */
   } catch (err) {
     // catch exception from the OKIC server
   }
