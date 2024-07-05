@@ -188,7 +188,7 @@ The previous examples are only first step to complete payment with OKIC.
 You have to listen OKIC Blockchain Socket Server for transaction validation status.
 To achieve that you can use _socket.io-client_ on your server.
 
-**You can use only one account with public key for the merchant services.**
+**You can use only one Business and verified OKIC account for the merchant services.**
 
 _Grouping merchant services in one OKIC account will come in the next version_.
 
