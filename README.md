@@ -23,3 +23,10 @@ All transactions on both environments are available in OKIC explorer.
 
 - [OKIC Staging Explorer](https://explorer.okiwallet.xyz)
 - OKIC Production Explorer is not available yet
+
+### Requirements for OKIC integration
+
+Following credentials are required for merchant OKIC integration:
+
+- [x] **merchant public key**
+- [x] **merchant private key**
