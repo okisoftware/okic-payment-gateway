@@ -16,5 +16,5 @@ All transactions initiated by merchant on our staging environment are not real a
 All functionality on both environments are the same and it will easy to switch on production environment after functionality 
 testing by changing the URL.
 
-OKIC staging URL: https://backend.okiwallet.xyz
-OKIC production URL: **not available - coming soon**
+- OKIC staging URL: https://backend.okiwallet.xyz
+- OKIC production URL: **not available - coming soon**
