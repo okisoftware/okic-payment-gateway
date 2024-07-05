@@ -114,7 +114,52 @@ generatePaymentGateway();
 
 ```
 
-If the API request is successful you should get the response JSON payload:
+### Payment Processing integration Example
+
+```typescript
+
+import axios from "axios";
+
+const generatePaymentProcessing = async () => {
+  const senderWalletAddress = "okicx5222..." // Sender OKIC Wallet Address
+  const receiverWalletAddress = "okicx6333..." // Recipient OKIC Wallet Address
+  const amount = 100; // Transaction value for processing
+  const additionalFee = 0.5; // Additional transaction fee charged by merchant for the services, it can be 0 
+  const token = "VKX9LD"; // Secure token generated in sender OKIC wallet account
+  const senderPublicKey = "6087eddca5e18eb51730ae1992de5777" // Sender OKIC Public Key
+  const publicKey = process.env.PUBLIC_KEY // merchant public key;
+  const privateKey = process.env.PRIVATE_KEY // merchant private key;
+
+  const OKIC_URL = "https://backend.okiwallet.xyz/api"
+
+  try {
+    const { data } = await axios.post(`${OKIC_URL}/transaction/external/payment/client`, {
+      senderWalletAddress,
+      receiverWalletAddress,
+      amount,
+      additionalFee,
+      token,
+      senderPublicKey,
+      publicKey,
+      privateKey
+    });
+
+    const { txid } = data;
+
+    /** save txid from the response in your storage with your order details */
+    /** in this moment transaction has PreAuthorized status and it's not validated yet */
+    /** txid is unique and you can query your storage later by txid to find and 
+     * update your order if the transaction status is Success */
+  } catch (err) {
+    // catch exception from the OKIC server
+  }
+};
+
+generatePaymentProcessing();
+
+```
+
+For both examples, if the API request is successful you should get the response JSON payload:
 
 ```json
 {
@@ -125,7 +170,7 @@ If the API request is successful you should get the response JSON payload:
 
 ```
 
-If the API request is unsuccessful the response returns JSON payload in format:
+For both examples, if the API request is unsuccessful the response returns JSON payload in format:
 
 ```json
 {
